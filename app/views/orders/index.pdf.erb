@@ -1,0 +1,22 @@
+<%= image_tag 'Burst-Orange-Stroke.png' %>
+<%= image_tag 'rails.png' %>
+
+<%#= wicked_pdf_image_tag 'Burst-Orange-Stroke.png' %>
+<%#= wicked_pdf_image_tag 'rails.png' %>
+
+<h1><%= @title %></h1>
+
+<table class="table table-striped">
+  <tr>
+    <th>Title</th>
+    <th>Total</th>
+  </tr>
+
+<% @orders.each do |order| %>
+  <tr>
+    <td><%= order.title %></td>
+    <td><%= order.total %></td>
+  </tr>
+<% end %>
+</table>
+

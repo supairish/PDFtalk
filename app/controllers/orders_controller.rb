@@ -10,8 +10,7 @@ class OrdersController < ApplicationController
         @filename = "#{ @title.gsub(/[\s\/]/, '-') }.pdf"
 
         render(:pdf          => @filename,
-               :template     => 'orders/index',
-               :formats      => ['pdf'],
+               :template     => 'orders/index.pdf',
                :layout       => 'layouts/print.html',
                :show_as_html => params[:debug].present?,
                :page_size    => 'Letter',
@@ -31,6 +30,18 @@ class OrdersController < ApplicationController
     respond_to do |format|
       format.html # show.html.erb
       format.json { render json: @order }
+      format.pdf do
+        render(:pdf          => "Order-#{@order.id}.pdf",
+               :template     => 'orders/show.pdf',
+               :layout       => 'layouts/print.html',
+               :show_as_html => params[:debug].present?,
+               :page_size    => 'Letter',
+               :orientation  => 'Landscape',
+               :margin       => {:top    => 5,
+                                 :bottom => 5,
+                                 :left   => 5,
+                                 :right  => 5})
+      end
     end
   end
 

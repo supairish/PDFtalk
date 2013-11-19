@@ -1,6 +1,6 @@
-desc ""
+desc "Send some orders for your biz"
 task send_orders: :environment do
-  [Order.first].each do |order|
+  Order.all.each do |order|
     av  = ActionView::Base.new(ActionController::Base.view_paths)
     pdf = WickedPdf.new.pdf_from_string(av.render(:pdf      => "temp.pdf",
                                                   :template => 'orders/show',
@@ -15,6 +15,6 @@ task send_orders: :environment do
                                                                     :right  => 5}
                                                   ))
 
-    OrdersMailer.recent(pdf).deliver
+    OrdersMailer.recent(order, pdf).deliver
   end
 end

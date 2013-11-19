@@ -39,6 +39,7 @@ GEM
     byebug (2.3.1)
       columnize (~> 0.3.6)
       debugger-linecache (~> 1.2.0)
+    chronic (0.10.2)
     coderay (1.1.0)
     coffee-rails (3.2.2)
       coffee-script (>= 2.2.0)
@@ -175,6 +176,9 @@ GEM
     uglifier (2.3.1)
       execjs (>= 0.3.0)
       json (>= 1.8.0)
+    whenever (0.8.4)
+      activesupport (>= 2.3.4)
+      chronic (>= 0.6.3)
     wicked_pdf (0.9.7)
       rails
     yard (0.8.7.3)
@@ -201,4 +205,5 @@ DEPENDENCIES
   therubyracer
   thin
   uglifier (>= 1.0.3)
+  whenever
   wicked_pdf

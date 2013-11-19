@@ -11,6 +11,7 @@ gem 'jquery-ui-rails'
 gem 'less-rails-bootstrap'
 gem 'mysql2'
 gem 'wicked_pdf'
+gem 'whenever'
 
 group :development do
   gem 'binding_of_caller'

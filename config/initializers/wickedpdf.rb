@@ -1,3 +1,3 @@
 WickedPdf.config = {
-  :exe_path => '/Users/supairish/wkhtmltopdf.app/Contents/MacOS/wkhtmltopdf'
+  :exe_path => '/usr/local/bin/wkhtmltopdf'
 }

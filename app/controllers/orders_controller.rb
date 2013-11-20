@@ -7,11 +7,13 @@ class OrdersController < ApplicationController
       format.json { render json: @orders }
       format.pdf do
         @title    = "Orders for #{ Time.zone.now.strftime("%m/%d/%Y") }"
-        @filename = "#{ @title.gsub(/[\s\/]/, '-') }.pdf"
+        @filename = "#{ @title.gsub(/[\s\/]/, '-') }"
 
         render(:pdf          => @filename,
-               :template     => 'orders/index.pdf',
+               :template     => 'orders/index',
                :layout       => 'layouts/print.html',
+               :formats      => [:pdf],
+               :disposition  => 'attachment',
                :show_as_html => params[:debug].present?,
                :page_size    => 'Letter',
                :orientation  => 'Landscape',

@@ -24,6 +24,17 @@ group :development do
   gem 'thin'
 end
 
+group :development, :test do
+  gem 'rspec-rails'
+end
+
+group :test do
+  gem 'capybara',           '~> 2.1.0'
+  gem 'database_cleaner',   '~> 1.2.0'
+  gem 'launchy',            '~> 2.3.0'
+  gem 'rspec-instafail',    '~> 0.2.4'
+  gem 'selenium-webdriver', '~> 2.37.0'
+end
 
 group :assets do
   gem 'sass-rails',   '~> 3.2.3'

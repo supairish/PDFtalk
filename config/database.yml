@@ -6,3 +6,12 @@ development:
   pool: 5
   timeout: 5000
   reconnect: true
+
+test:
+  adapter: mysql2
+  database: pdftalk_test
+  username: root
+  password:
+  pool: 5
+  timeout: 5000
+  reconnect: true

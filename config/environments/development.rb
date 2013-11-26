@@ -36,14 +36,14 @@ Pdftalk::Application.configure do
   config.assets.debug = true
 
   config.action_mailer.default_url_options = { :host => "pdftest.dev" }
-  config.action_mailer.delivery_method :smtp
+  config.action_mailer.delivery_method :test
 
   config.action_mailer.smtp_settings = {
     :address        => "smtp.sendgrid.net",
     :port           => "587",
     :authentication => :plain,
-    :user_name      => 'supairish@gmail.com',
-    :password       => 'cCEL9F7JdDVTz4c',
+    :user_name      => '<username>',
+    :password       => '<password>',
     :domain         => "pdftest.dev",
     :enable_starttls_auto => true
   }

@@ -4,23 +4,28 @@
 <h1>Listing orders</h1>
 
 <table class="table table-striped">
-  <tr>
-    <th>Title</th>
-    <th>Total</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Total</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
 
-<% @orders.each do |order| %>
-  <tr>
-    <td><%= order.title %></td>
-    <td><%= order.total %></td>
-    <td><%= link_to 'Show', order %></td>
-    <td><%= link_to 'Edit', edit_order_path(order) %></td>
-    <td><%= link_to 'Destroy', order, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-  </tr>
-<% end %>
+  <tbody>
+    <% @orders.each do |order| %>
+      <tr>
+        <td><%= order.title %></td>
+        <td><%= order.total %></td>
+        <td><%= link_to 'Show', order %></td>
+        <td><%= link_to 'Edit', edit_order_path(order) %></td>
+        <td><%= link_to 'Destroy', order, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+
 </table>
 
 <br />
